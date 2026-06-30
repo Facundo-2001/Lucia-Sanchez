@@ -16,9 +16,7 @@ const Footer = () => {
         <div className="footer-section footer-links">
           <div className="footer-column">
             <h4 className="footer-heading">ARFW</h4>
-            <Link to="/link1">-</Link>
-            <Link to="/link2">-</Link>
-            <Link to="/link3">-</Link>
+            <Link to="/">-</Link>
           </div>
           <div className="footer-column">
             <h4 className="footer-heading">Portfolio</h4>
