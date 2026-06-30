@@ -1,0 +1,27 @@
+.btn-generico {
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* Variante Profesional/Artística */
+.primario {
+  background-color: #6b0d0d; /* Bordeaux */
+  color: white;
+  border-color: #d4af37; /* Oro */
+}
+
+.primario:hover {
+  background-color: #d4af37;
+  color: #6b0d0d;
+}
+
+/* Variante Secundaria */
+.secundario {
+  background-color: transparent;
+  color: #2d2d2d;
+  border-color: #2d2d2d;
+}

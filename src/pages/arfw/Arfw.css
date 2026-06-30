@@ -1,0 +1,36 @@
+.arfw-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* Espacio entre el texto y el carrusel */
+}
+
+.arfw-intro {
+  text-align: center;
+  color: var(--bordeaux);
+  margin-top: 2rem;
+}
+
+.arfw-intro h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.arfw-intro p {
+  font-size: 1.5rem;
+  margin: 0.25rem 0 0 0;
+  font-style: italic;
+}
+
+/* Hacemos que el carrusel ocupe todo el ancho y tenga una altura considerable */
+.arfw-container .carrusel-container {
+  width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+  max-width: 100vw;
+  height: 70vh; /* 70% de la altura de la ventana */
+  border-radius: 0; /* Quitamos el borde redondeado para que se ajuste a los bordes */
+  border-left: none;
+  border-right: none;
+}

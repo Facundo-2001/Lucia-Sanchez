@@ -1,0 +1,158 @@
+.main-header {
+  background-color: transparent; /* Fondo transparente para integrarse con el entorno */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 120px; /* Header un poco más alto para dar espacio al logo */
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: none; /* Quitamos la sombra para que no marque una línea de corte dura */
+  position: sticky; /* Se queda fijo en la parte superior */
+  top: 0;
+  z-index: 1000; /* Asegura que siempre esté por encima del resto */
+  transition: all 0.3s ease;
+}
+
+/* Asegurar que los enlaces del menú de navegación sean de color rojo oscuro */
+.main-header a:not(.header-logo) {
+  color: var(--bordeaux, #6b0d0d) !important;
+  font-size: 1.2rem; /* Aumenta el tamaño de la fuente de los enlaces */
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.main-header a:not(.header-logo):hover {
+  color: var(--oro) !important; /* Cambia a dorado para mejor visibilidad */
+  transform: translateY(-2px); /* Se eleva un poquito */
+}
+
+/* Subrayado animado para los enlaces */
+.main-header a:not(.header-logo)::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--oro);
+  transition: width 0.3s ease;
+}
+
+.main-header a:not(.header-logo):hover::after {
+  width: 100%;
+}
+
+/* Estilo para la imagen del logo */
+.header-logo-img {
+  max-height: 120px; /* Aumentamos el tamaño del logo */
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.15)) brightness(1.1); /* Ligero resplandor para separarlo del fondo */
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.header-logo-img:hover {
+  transform: scale(1.05) rotate(-2deg);
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6)) brightness(1.2); /* Resplandor dorado al pasar el cursor */
+}
+
+/* Opcional: Asegura que el contenedor del logo esté bien centrado verticalmente */
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- CONTENEDOR DE NAVEGACIÓN Y HAMBURGUESA --- */
+.nav-container {
+  display: flex;
+  align-items: center;
+  transition: right 0.4s ease;
+}
+
+/* Forzamos a que los enlaces dentro del Nav se apilen y se separen bien */
+.nav-container > *,
+.nav-container ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px; /* Acercamos los enlaces de navegación */
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos del botón hamburguesa */
+.hamburger-menu {
+  display: none; /* Oculto en escritorio */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001; /* Siempre por encima del menú desplegable */
+}
+
+.hamburger-menu span {
+  display: block;
+  height: 4px; /* Aumentamos el grosor de las líneas */
+  width: 100%;
+  background-color: var(--oro);
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.8); /* Sombra oscura para separarlo de la imagen de fondo */
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* Animación de la Hamburguesa a la "X" al estar abierta */
+.hamburger-menu.open span:nth-child(1) {
+  transform: translateY(9.5px) rotate(45deg);
+  background-color: var(--oro);
+}
+.hamburger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu.open span:nth-child(3) {
+  transform: translateY(-9.5px) rotate(-45deg);
+  background-color: var(--oro);
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 0 5%;
+  }
+
+  .main-header a:not(.header-logo) {
+    font-size: 1.5rem; /* Letras un poco más grandes para poder tocarlas fácil con el dedo */
+  }
+
+  .hamburger-menu {
+    display: flex; /* Visible en móviles */
+  }
+
+  .nav-container {
+    position: fixed; /* Se fija por encima del contenido sin empujarlo */
+    top: 120px; /* Queda justo debajo del header de 120px */
+    right: -100%; /* Menú oculto fuera de la pantalla por la derecha */
+    width: 250px;
+    height: calc(100vh - 120px); /* Ocupa el resto de la altura de la pantalla */
+    background-color: rgba(18, 18, 18, 0.95); /* Fondo oscuro para que se vea por encima del contenido */
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 30px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5); /* Sombra para resaltar sobre el contenido */
+  }
+
+  /* La clase open empuja el menú a la vista */
+  .nav-container.open {
+    right: 0; 
+  }
+
+  .nav-container > *,
+  .nav-container ul {
+    flex-direction: column;
+  }
+}

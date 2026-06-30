@@ -1,0 +1,114 @@
+.main-footer {
+  background-color: transparent;
+  width: 100%;
+  color: var(--bordeaux);
+  padding: 2rem 5%; /* Añadimos padding lateral */
+  border-top: none;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Distribuye el espacio entre las secciones */
+  align-items: flex-start; /* Alinea los items al inicio */
+  gap: 2rem;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Sección Izquierda: Logo y Contacto --- */
+.footer-logo-contact {
+  align-items: flex-start; /* Alinea el contenido a la izquierda */
+  gap: 1rem;
+}
+
+.footer-logo {
+  max-width: 150px; /* Ajusta el tamaño según tu logo */
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.footer-email {
+  color: var(--bordeaux);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-email:hover {
+  text-decoration: underline;
+}
+
+/* --- Sección Central: Enlaces --- */
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem; /* Espacio entre las columnas de enlaces */
+  flex-grow: 1; /* Permite que esta sección crezca para ocupar espacio */
+  justify-content: center; /* Centra las columnas de enlaces */
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-heading {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--bordeaux);
+}
+
+.footer-column a {
+  color: var(--bordeaux);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-social {
+  align-items: flex-end; /* Alinea el contenido a la derecha */
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--bordeaux);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+}
+
+.footer-icon {
+  width: 24px; /* Tamaño del icono de red social */
+  height: 24px;
+}
+
+/* --- Responsive para Móviles --- */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Apila las secciones verticalmente */
+    align-items: center; /* Centra todo en móvil */
+    text-align: center;
+  }
+
+  .footer-logo-contact, .footer-social, .footer-links {
+    align-items: center; /* Centra el contenido de cada sección */
+  }
+}

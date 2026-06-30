@@ -1,0 +1,36 @@
+/* --- Estilos Base / Escritorio --- */
+.navbar {
+  display: flex;
+  justify-content: flex-end; /* Alinea el menú a la derecha en PC */
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-item a {
+  color: var(--bordeaux, #6b0d0d);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+  color: var(--oro, #d4af37);
+}
+
+/* --- Estilos para Móvil (Celulares y Tablets) --- */
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    justify-content: center;
+  }
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,121 @@
+.sobre-mi-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  color: var(--bordeaux);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* --- Sección de Introducción --- */
+.sobre-mi-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+.intro-texto {
+  flex: 1;
+  max-width: 60%;
+  text-align: left;
+}
+
+.intro-texto h1 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.intro-texto p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.intro-imagen {
+  flex-shrink: 0;
+}
+
+.intro-imagen img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 4px solid var(--oro);
+}
+
+.sobre-mi-separator {
+  border: 0;
+  height: 1px;
+  background-color: var(--bordeaux);
+  opacity: 0.2;
+}
+
+/* --- Sección de Línea de Tiempo --- */
+.timeline-section {
+  text-align: center;
+}
+
+.timeline-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.timeline {
+  display: flex;
+  overflow-x: auto; /* Habilita el scroll horizontal */
+  gap: 2rem;
+  padding: 1rem 0.5rem; /* Espacio para que no se corte la sombra */
+  /* Estilos para la barra de scroll */
+  scrollbar-width: thin;
+  scrollbar-color: var(--oro) rgba(0, 0, 0, 0.1);
+}
+
+.timeline::-webkit-scrollbar {
+  height: 8px;
+}
+.timeline::-webkit-scrollbar-thumb {
+  background-color: var(--oro);
+  border-radius: 10px;
+}
+
+.timeline-item {
+  flex: 0 0 280px; /* No crece, no se encoge, base de 280px */
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.timeline-imagen {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.timeline-info {
+  padding: 1rem;
+}
+
+.timeline-year {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: var(--oro);
+}
+
+/* --- Responsive para Móviles --- */
+@media (max-width: 768px) {
+  .sobre-mi-intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-texto {
+    max-width: 100%;
+    text-align: center;
+  }
+}

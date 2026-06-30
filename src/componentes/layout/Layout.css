@@ -1,0 +1,60 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Paleta de colores artística y oscura */
+:root {
+  --bordeaux: #8a2a2a; /* Burdeos más brillante para contraste en fondos oscuros */
+  --oro: #d4af37;
+  --fondo-principal: #1a1a1a; /* Negro carbón, no puro */
+  --fondo-secundario: #2c2c2c; /* Gris oscuro para tarjetas y secciones */
+  --texto-principal: #e0e0e0; /* Blanco suave para lectura cómoda */
+  --blanco: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif; /* Una fuente con serifa queda muy artística */
+  background-color: var(--fondo-principal);
+  color: var(--texto-principal);
+}
+
+
+.layout-content {
+  max-width: 100%; /* Ahora ocupará todo el ancho disponible */
+  margin: 0 auto;
+  padding: 20px 15px; /* Reducimos espacios superior/inferior para móviles */
+}
+
+/* Regla exclusiva para computadoras y tablets grandes */
+@media (min-width: 768px) {
+  .layout-content {
+    padding: 40px 4%; /* Reduce el espacio visual a los lados en pantallas grandes */
+  }
+}
+
+/* Ejemplo para los botones (CTA) */
+.btn-artistico {
+  background-color: var(--bordeaux);
+  color: var(--blanco);
+  padding: 10px 25px;
+  border: 2px solid var(--oro);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-artistico:hover {
+  background-color: var(--oro);
+  color: var(--bordeaux);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+}

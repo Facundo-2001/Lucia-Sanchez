@@ -1,0 +1,68 @@
+.portfolio-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto; /* Más espacio arriba y abajo */
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* Espacio entre la línea y el siguiente elemento */
+  color: var(--bordeaux);
+}
+
+.portfolio-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem; /* Espacio entre texto e imagen */
+}
+
+.portfolio-text {
+  flex: 1; /* Ocupa el 50% del espacio */
+  max-width: 50%;
+}
+
+.portfolio-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+  color: var(--bordeaux);
+}
+
+.portfolio-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.portfolio-image {
+  flex: 1; /* Ocupa el otro 50% */
+  max-width: 45%; /* Un poco menos para que no se pegue */
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-separator {
+  border: 0;
+  height: 1px;
+  background-color: var(--bordeaux);
+  opacity: 0.2;
+  margin: 0; /* El gap del contenedor principal ya da espacio */
+}
+
+/* --- Responsive para Móviles --- */
+@media (max-width: 768px) {
+  .portfolio-item {
+    flex-direction: column-reverse; /* La imagen aparecerá arriba del texto */
+    text-align: center;
+  }
+
+  .portfolio-text,
+  .portfolio-image {
+    max-width: 100%;
+  }
+}
