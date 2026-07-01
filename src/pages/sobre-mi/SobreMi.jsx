@@ -35,7 +35,7 @@ const trabajos = [
   {
     year: '2022',
     description: 'Dandara: Phone - Video Clip.',
-    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
+    imageUrl: '../src/assets/sobre-mi/timeline/dandara-phone.jpeg',
   },
   {
     year: '2023',
