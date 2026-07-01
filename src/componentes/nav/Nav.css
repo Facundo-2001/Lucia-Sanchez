@@ -1,4 +1,6 @@
 /* --- Estilos Base / Escritorio --- */
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900);
+
 .navbar {
   display: flex;
   justify-content: flex-end; /* Alinea el menú a la derecha en PC */
@@ -13,13 +15,21 @@
 }
 
 .nav-item a {
+  font-family: 'Noto+Sans+KR', sans-serif;
+  text-decoration: none;
+  font-weight: 450;
+  transition: color 0.3s ease;
+}
+
+/*
+.nav-item a {
   color: var(--bordeaux, #6b0d0d);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
-}
+}*/
 
-.nav-item a:hover {
+.nav-item a:hover {  /*???*/
   color: var(--oro, #d4af37);
 }
 

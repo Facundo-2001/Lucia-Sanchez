@@ -4,7 +4,7 @@ import './Arfw.css';
 
 // Define aquí las rutas a las imágenes que quieres mostrar en el carrusel.
 const imagenesHome = [
-  '/imagenes/imagen-carrusel-1.jpg', // Reemplaza con la ruta a tu imagen 1
+  '../makeup-arfw.jpeg', // Reemplaza con la ruta a tu imagen 1
   '/imagenes/imagen-carrusel-2.jpg', // Reemplaza con la ruta a tu imagen 2
   '/imagenes/imagen-carrusel-3.jpg', // Reemplaza con la ruta a tu imagen 3
 ];

@@ -83,7 +83,7 @@
 
 .timeline-item {
   flex: 0 0 280px; /* No crece, no se encoge, base de 280px */
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(214, 195, 195, 0.952);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);

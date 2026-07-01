@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900);
+@import url(https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..900);
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -68,8 +71,8 @@ body {
 
 h1,
 h2 {
-  font-family: var(--heading);
-  font-weight: 500;
+  font-family: 'Be+Vietnam+Pro', sans-serif;
+  font-weight: 400;
   color: var(--text-h);
 }
 
@@ -92,6 +95,7 @@ h2 {
   }
 }
 p {
+  font-family: 'Playwrite+NZ', serif;
   margin: 0;
 }
 
@@ -108,4 +112,9 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+/*background color*/
+html, body, #root {
+  background-color: #fce5df
 }

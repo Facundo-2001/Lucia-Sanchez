@@ -7,16 +7,16 @@ const Nav = () => {
     <nav className="navbar">
       <ul className="nav-list">
         <li className="nav-item">
-          <Link to="/">Arfw</Link>
+          <Link to="/">ARFW</Link>
         </li>
         <li className="nav-item">
-          <Link to="/sobre-mi">Sobre Mí</Link>
+          <Link to="/sobre-mi">SOBRE MI</Link>
         </li>
         <li className="nav-item">
-          <Link to="/portfolio">Portfolio</Link>
+          <Link to="/portfolio">PORTFOLIO</Link>
         </li>
         <li className="nav-item">
-          <Link to="/contacto">Contacto</Link>
+          <Link to="/contacto">CONTACTO</Link>
         </li>
       </ul>
     </nav>

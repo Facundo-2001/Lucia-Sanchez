@@ -26,7 +26,7 @@ const Footer = () => {
 
         {/* Sección Derecha: Redes Sociales */}
         <div className="footer-section footer-social">
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href="https://www.instagram.com/lusanchez.makeup?igsh=MTkzMG13aWhqOWZzYg==" target="_blank" rel="noopener noreferrer" className="social-link">
             {/* Aquí podrías usar un componente de icono SVG si lo tienes */}
             <img src="/icons/instagram.svg" alt="Instagram" className="footer-icon" />
             <span>Instagram</span>
