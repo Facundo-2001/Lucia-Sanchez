@@ -45,7 +45,7 @@ const trabajos = [
   {
     year: '2026',
     description: 'Tutankamon - Jefa de Maquillaje',
-    imageUrl: '../src/assets/sobre-mi/timeline/huerta-paula-colombini.jpeg',
+    imageUrl: '../src/assets/sobre-mi/timeline/tutankamon.jpg',
   },
 ];
 
