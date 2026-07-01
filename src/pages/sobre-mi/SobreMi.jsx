@@ -5,10 +5,10 @@ const trabajos = [
   {
     year: '2011',
     description: 'Filosofia...',
-    imageUrl: '/imagenes/trabajos/trabajo-1.jpg',
+    imageUrl: '../src/assets/sobre-mi/timeline/filosofia-y-mas.jpg',
   },
   {
-    year: '2011',
+    year: '2011 - 2021',
     description: 'Mirta Te Acompaña',
     imageUrl: '../src/assets/sobre-mi/timeline/mirta-te-acompaña.jpg',
   },
@@ -30,6 +30,11 @@ const trabajos = [
   {
     year: '2021 - Actualidad',
     description: 'Descripción del trabajo o proyecto realizado en 2021.',
+    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
+  },
+  {
+    year: '2022',
+    description: 'Dandara: Phone - Video Clip.',
     imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
   },
   {
