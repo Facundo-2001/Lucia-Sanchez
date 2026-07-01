@@ -9,6 +9,8 @@ import Arfw from './pages/arfw/Arfw';
 import SobreMi from './pages/sobre-mi/SobreMi.jsx';
 import Portfolio from './pages/portfolio/Portfolio.jsx';
 import Contacto from './pages/contacto/Contacto.jsx';
+import VideosProgramas from './pages/videos-y-programas/VideosProgramas.jsx';
+import Eventos from './pages/eventos/Eventos.jsx';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="sobre-mi" element={<SobreMi />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="contacto" element={<Contacto />} />
+        <Route path="videos-y-programas" element={<VideosProgramas />} />
+        <Route path="eventos" element={<Eventos />} />
       </Route>
     </Routes>
   )

@@ -1,61 +1,111 @@
-/* Contenedor general de la página */
+/* Contenedor general */
 .portfolio-main-wrapper {
-  width: 95%;
+  width: 90%;
   max-width: 1200px;
   margin: 4rem auto;
-  font-family: 'Poppins', sans-serif; /* Usando tu nueva fuente */
+  font-family: 'Poppins', sans-serif;
 }
 
 .portfolio-page-title {
   text-align: center;
   margin-bottom: 3rem;
-  color: #111;
+  color: var(--bordeaux, #111);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-/* EL SECRETO: Contenedor que alinea las dos columnas */
-.portfolio-columns-container {
+/* CONTENEDOR PRINCIPAL: Pone las dos portadas una al lado de la otra */
+.portfolio-grid-covers {
   display: flex;
-  flex-direction: row; /* Pone los elementos uno al lado del otro */
-  gap: 3rem;           /* Espacio de separación entre las dos columnas */
-  align-items: flex-start;
+  flex-direction: row;
+  gap: 2rem; /* Espacio de separación entre ambas portadas */
+  width: 100%;
 }
 
-/* Estilo base para cada una de las columnas */
-.portfolio-column {
-  flex: 1;             /* Hace que ambas columnas midan exactamente lo mismo (50% y 50%) */
-  background-color: #ffffff;
-  padding: 20px;
+/* ESTILO BASE PARA CADA PORTADA (El enlace completo) */
+.portfolio-cover-card {
+  flex: 1; /* Hace que midan exactamente 50% y 50% cada una */
+  height: 500px; /* Altura de las portadas (puedes subirla o bajarla a gusto) */
+  width: 500px;
   border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none !important;
+  position: relative;
+  
+  /* Configuración general del fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
 }
 
-/* Títulos de cada columna */
-.portfolio-column h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0rem;
-  border-bottom: 2px solid #212529; /* Una línea sutil abajo del título */
-  padding-bottom: 0.5rem;
+
+.video-cover {
+  background-image: url('/imagenes/portfolio/dandara.jpg'); /* VIDEOS PORTADA */
 }
 
-/* Contenedor interno de los elementos de cada columna */
-.column-content {
+.eventos-cover {
+  background-image: url('/imagenes/portfolio/foto1.jpg'); /* FOTOS PORTADA */
+}
+
+/* CAPA OSCURA INTERNA: Para mejorar la lectura del texto y centrarlo */
+.cover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Capa oscura inicial (40%) */
   display: flex;
-  flex-direction: column; /* Los videos/fotos dentro de la columna van hacia abajo */
-  gap: 1.5rem;            /* Espacio entre cada foto o cada video */
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.4s ease;
 }
 
-/* Ejemplos visuales (puedes borrarlos cuando metas tus componentes reales) */
-.video-placeholder, .picture-placeholder {
-  background-color: #f5f5f5;
-  border: 1px dashed #ccc;
-  padding: 40px text-align center;
-  border-radius: 6px;
+/* Títulos dentro de las portadas */
+.cover-overlay h2 {
+  color: #ffffff !important;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0 1rem;
   text-align: center;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.5rem;
+  transition: all 0.4s ease;
 }
 
-/* --- RESPONSIVE: Si se mira desde un celular, las columnas se apilan una abajo de la otra --- */
+/* --- EFECTOS INTERACTIVOS (HOVER) --- */
+
+.portfolio-cover-card:hover {
+  transform: translateY(-8px); /* Eleva la tarjeta suavemente */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Al pasar el mouse, aclaramos un poco el fondo y destacamos el título */
+.portfolio-cover-card:hover .cover-overlay {
+  background-color: rgba(114, 47, 55, 0.5); /* Se tiñe sutilmente de tu color burdeos/bordeaux */
+}
+
+.portfolio-cover-card:hover .cover-overlay h2 {
+  color: var(--oro, #d4af37) !important; /* El texto pasa a color oro */
+  border-color: var(--oro, #d4af37);     /* Aparece una línea inferior dorada */
+  transform: scale(1.03);
+}
+
+/* --- RESPONSIVE: En celulares se apilan verticalmente --- */
 @media (max-width: 768px) {
-  .portfolio-columns-container {
-    flex-direction: column; /* Pasa de horizontal a vertical en pantallas chicas */
-    gap: 2rem;
+  .portfolio-grid-covers {
+    flex-direction: column; /* Cambia a vertical */
+    gap: 1.5rem;
+  }
+  
+  .portfolio-cover-card {
+    height: 350px; /* Reducimos la altura en pantallas chicas */
   }
 }

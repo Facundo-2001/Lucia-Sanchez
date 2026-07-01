@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="footer-content">
         {/* Sección Izquierda: Logo y Contacto */}
         <div className="footer-section footer-logo-contact">
-          <img src="/logos/LogoFooter.png" alt="Logo" className="footer-logo" />
+          <img src="../src/assets/header/lucia-sanchez-logo.png" alt="Logo" className="footer-logo" />
           <a href="mailto:contacto@gmail.com" className="footer-email">contacto@gmail.com</a>
         </div>
 
@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="footer-section footer-social">
           <a href="https://www.instagram.com/lusanchez.makeup?igsh=MTkzMG13aWhqOWZzYg==" target="_blank" rel="noopener noreferrer" className="social-link">
             {/* Aquí podrías usar un componente de icono SVG si lo tienes */}
-            <img src="/icons/instagram.svg" alt="Instagram" className="footer-icon" />
+            <img src="../src/assets/footer/instagram-logo.webp" alt="Instagram" className="footer-icon" />
             <span>Instagram</span>
           </a>
         </div>

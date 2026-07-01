@@ -1,5 +1,5 @@
 .main-header {
-  background-color: #f9cac3; /* Fondo transparente para integrarse con el entorno */
+  background-color: #f5c1c7; /* Fondo transparente para integrarse con el entorno */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -17,7 +17,7 @@
 
 /* Asegurar que los enlaces del menú de navegación sean de color rojo oscuro */
 .main-header a:not(.header-logo) {
-  color: var(--bordeaux, #8a7878) !important;
+  color: var(--bordeaux, #3b0000) !important;
   font-size: 1.2rem; /* Aumenta el tamaño de la fuente de los enlaces */
   transition: color 0.3s ease, transform 0.3s ease;
   display: inline-block;
@@ -98,25 +98,25 @@
 
 .hamburger-menu span {
   display: block;
-  height: 4px; /* Aumentamos el grosor de las líneas */
+  height: 4px; /* GROSOR LINEAS */
   width: 100%;
-  background-color: var(--oro);
+  background-color: var(--ham-menu); /* COLOR LINEAS */
   border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.8); /* Sombra oscura para separarlo de la imagen de fondo */
+  box-shadow: 0 1px 4px rgba(77, 76, 76, 0.651); /* Sombra oscura para separarlo de la imagen de fondo */
   transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 }
 
 /* Animación de la Hamburguesa a la "X" al estar abierta */
 .hamburger-menu.open span:nth-child(1) {
   transform: translateY(9.5px) rotate(45deg);
-  background-color: var(--oro);
+  background-color: var(--ham-menu);  /* COLOR LINEA CRUZ */
 }
 .hamburger-menu.open span:nth-child(2) {
   opacity: 0;
 }
 .hamburger-menu.open span:nth-child(3) {
   transform: translateY(-9.5px) rotate(-45deg);
-  background-color: var(--oro);
+  background-color: var(--ham-menu);  /* COLOR LINEA CRUZ */
 }
 
 /* --- RESPONSIVE MOBILE --- */
@@ -126,24 +126,24 @@
   }
 
   .main-header a:not(.header-logo) {
-    font-size: 1.5rem; /* Letras un poco más grandes para poder tocarlas fácil con el dedo */
+    font-size: 1.5rem; /* AJUSTA TAMAÑO PARA FACILITAR EL USO DESDE DISP MOVILES */
   }
 
   .hamburger-menu {
-    display: flex; /* Visible en móviles */
+    display: flex; /* VISIBLE EN DISP MOVILES */
   }
 
   .nav-container {
-    position: fixed; /* Se fija por encima del contenido sin empujarlo */
-    top: 120px; /* Queda justo debajo del header de 120px */
-    right: -100%; /* Menú oculto fuera de la pantalla por la derecha */
+    position: fixed; /* SUPERPONE EL MENU AL CONTENIDO */
+    top: 0px; /* QUE TAN ABAJO DEL HEADER ESTÁ (120PX ES JUSTO ABAJO) */
+    right: -100%; /* OCULTA MENÚ A LA DERECHA */
     width: 250px;
-    height: calc(100vh - 120px); /* Ocupa el resto de la altura de la pantalla */
-    background-color: rgba(18, 18, 18, 0.95); /* Fondo oscuro para que se vea por encima del contenido */
+    height: calc(100vh - 120px); /* OCUPA LO QUE QUEDA DISPONIBLE DE PANTALLA */
+    background-color: rgba(202, 171, 171, 0.514); /* COLOR BACKGROUND MENU HAMBURGUESA */
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 30px;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5); /* Sombra para resaltar sobre el contenido */
+    padding-top: 120px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5); /* SOMBRE CONTENIDO */
   }
 
   /* La clase open empuja el menú a la vista */

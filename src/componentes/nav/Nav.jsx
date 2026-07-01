@@ -9,8 +9,21 @@ const Nav = () => {
         <li className="nav-item">
           <Link to="/">ARFW</Link>
         </li>
-        <li className="nav-item">
-          <Link to="/portfolio">PORTFOLIO</Link>
+        <li className="dropdown-item">
+            {/* El link principal que los lleva a la portada del portfolio */}
+            <Link to="/portfolio" className="dropdown-trigger">
+              PORTFOLIO <span className="arrow"></span>
+            </Link>
+            
+            {/* La lista desplegable con tus subítems */}
+            <ul className="dropdown-menu">
+              <li>
+                <Link to="/videos-y-programas">Video Clips & Programas</Link>
+              </li>
+              <li>
+                <Link to="/eventos">Eventos</Link>
+              </li>
+            </ul>
         </li>
         <li className="nav-item">
           <Link to="/sobre-mi">SOBRE MI</Link>

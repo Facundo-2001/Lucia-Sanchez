@@ -11,8 +11,9 @@
 
 /* Paleta de colores artística y oscura */
 :root {
-  --bordeaux: #c48d8d; /* COLOR DE LETRAS */
+  --bordeaux: #9c7373; /* COLOR DE LETRAS */
   --oro: #000000; /*COLOR EFECTO*/
+  --ham-menu: #ffffff;
   --fondo-principal: #1a1a1a; /* Negro carbón, no puro */
   --fondo-secundario: #2c2c2c; /* Gris oscuro para tarjetas y secciones */
   --texto-principal: #774242; /* Blanco suave para lectura cómoda */

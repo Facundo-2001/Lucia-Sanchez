@@ -182,3 +182,51 @@
     border-right-color: var(--border);
   }
 }
+
+/* PAGINAS AGREGADAS */
+.portfolio-subpage-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 4rem auto; /* Da espacio abajo del header y arriba del footer */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Títulos alineados */
+.subpage-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--bordeaux, #111);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+/* --- DISEÑO DE GRILLA (Para que los items se acomoden solos) --- */
+.videos-grid, .eventos-grid {
+  display: grid;
+  /* Crea columnas de mínimo 300px que se acomodan solas según el tamaño de la pantalla */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+  gap: 2.5rem; /* Distancia entre tarjetas */
+}
+
+/* Formato de las tarjetas de fotos individuales */
+.eventos-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.eventos-image-wrapper {
+  width: 100%;
+  height: 280px;
+}
+
+.eventos-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.eventos-card-text {
+  padding: 1.5rem;
+}

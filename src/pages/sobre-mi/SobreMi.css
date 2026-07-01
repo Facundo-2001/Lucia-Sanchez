@@ -73,7 +73,7 @@
   top: 0;
   bottom: 0;
   width: 4px;
-  background-color: var(--bordeaux, #333);
+  background-color: var(--oro, #333);
   transform: translateX(-50%);
   z-index: 1;
 }
@@ -158,13 +158,15 @@
 
 .timeline-year {
   display: inline-block;
+  font-family: 'Noto+Sans+KR', sans-serif;
   font-size: 1.3rem;
   font-weight: bold;
-  color: var(--oro, #d4af37);
+  color: var(#000000, #000000);
   margin-bottom: 0.5rem;
 }
 
 .timeline-info p {
+  font-family: 'Noto+Sans+KR', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   color: #444;
