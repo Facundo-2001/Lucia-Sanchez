@@ -8,6 +8,12 @@
   gap: 3rem;
 }
 
+.main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
 /* --- Sección de Introducción --- */
 .sobre-mi-intro {
   display: flex;
@@ -18,18 +24,11 @@
 
 .intro-texto {
   flex: 1;
-  max-width: 60%;
   text-align: left;
 }
 
-.intro-texto h1 {
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
 .intro-texto p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.7;
 }
 
@@ -38,12 +37,11 @@
 }
 
 .intro-imagen img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
+  width: 450px;
+  height: 450px;
   object-fit: cover;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  border: 4px solid var(--oro);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
 
 .sobre-mi-separator {
@@ -53,61 +51,127 @@
   opacity: 0.2;
 }
 
-/* --- Sección de Línea de Tiempo --- */
-.timeline-section {
-  text-align: center;
-}
-
+/* --- NUEVA SECCIÓN DE LÍNEA DE TIEMPO VERTICAL --- */
 .timeline-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
-.timeline {
+/* Contenedor relativo para posicionar la línea central */
+.timeline-vertical-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* La línea negra/bordeaux del centro */
+.timeline-center-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--bordeaux, #333);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Fila de cada item (Ocupa el 100% del ancho del contenedor de la timeline) */
+.timeline-row {
+  position: relative;
+  width: 100%;
+  margin-bottom: 5rem;
   display: flex;
-  overflow-x: auto; /* Habilita el scroll horizontal */
-  gap: 2rem;
-  padding: 1rem 0.5rem; /* Espacio para que no se corte la sombra */
-  /* Estilos para la barra de scroll */
-  scrollbar-width: thin;
-  scrollbar-color: var(--oro) rgba(0, 0, 0, 0.1);
+  /* Estado inicial antes de la animación al hacer scroll */
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.timeline::-webkit-scrollbar {
-  height: 8px;
-}
-.timeline::-webkit-scrollbar-thumb {
-  background-color: var(--oro);
-  border-radius: 10px;
+/* Ajustes cuando la tarjeta va a la DERECHA */
+.timeline-row.right {
+  justify-content: flex-end;
+  transform: translateX(80px) scale(0.9);
 }
 
-.timeline-item {
-  flex: 0 0 280px; /* No crece, no se encoge, base de 280px */
-  background-color: rgba(214, 195, 195, 0.952);
+/* Ajustes cuando la tarjeta va a la IZQUIERDA */
+.timeline-row.left {
+  justify-content: flex-start;
+  transform: translateX(-80px) scale(0.9);
+}
+
+/* CUANDO ENTRA EN PANTALLA (Activa el scroll) */
+.timeline-row.revealed {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* La Tarjeta (Ocupa un poco menos del 50% para no pisar la línea del medio) */
+.timeline-card {
+  width: 45%;
+  background-color: #ffffff;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+}
+
+/* El Punto Central */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--oro, #d4af37);
+  border: 4px solid #ffffff;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 0 0 3px var(--bordeaux);
+}
+
+/* Contenedor de la Imagen dentro de la tarjeta */
+.timeline-image-wrapper {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
 }
 
 .timeline-imagen {
   width: 100%;
-  height: 180px;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
+.timeline-card:hover .timeline-imagen {
+  transform: scale(1.04); /* Pequeño zoom elegante al pasar el mouse */
+}
+
+/* Textos dentro de la tarjeta */
 .timeline-info {
-  padding: 1rem;
+  padding: 1.5rem;
+  text-align: left;
 }
 
 .timeline-year {
-  display: block;
-  margin-top: 0.5rem;
+  display: inline-block;
+  font-size: 1.3rem;
   font-weight: bold;
-  color: var(--oro);
+  color: var(--oro, #d4af37);
+  margin-bottom: 0.5rem;
 }
 
-/* --- Responsive para Móviles --- */
+.timeline-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+/* --- RESPONSIVE PARA MÓVILES (Cambio drástico para pantallas chicas) --- */
 @media (max-width: 768px) {
   .sobre-mi-intro {
     flex-direction: column;
@@ -116,6 +180,36 @@
 
   .intro-texto {
     max-width: 100%;
-    text-align: center;
+  }
+
+  .intro-imagen img {
+    width: 100%;
+    max-width: 320px;
+    height: 320px;
+  }
+
+  /* En móviles, movemos la línea central hacia la izquierda */
+  .timeline-center-line {
+    left: 20px;
+    transform: none;
+  }
+
+  .timeline-dot {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+
+  /* Todas las tarjetas pasan a ocupar casi todo el ancho y se alinean a la derecha de la línea */
+  .timeline-row.left, .timeline-row.right {
+    justify-content: flex-end;
+    transform: translateY(40px); /* En móviles la animación viene desde abajo */
+  }
+
+  .timeline-row.revealed {
+    transform: translateY(0);
+  }
+
+  .timeline-card {
+    width: calc(100% - 50px);
   }
 }

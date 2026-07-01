@@ -1,45 +1,116 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './SobreMi.css';
 
-// Array con los datos de tu experiencia.
-// Añade o modifica tus trabajos aquí.
 const trabajos = [
   {
-    year: '2023',
-    description: 'Descripción del trabajo o proyecto realizado en 2023.',
-    imageUrl: '/imagenes/trabajos/trabajo-1.jpg', // Reemplaza con la ruta a tu imagen
+    year: 'Dicciembre - Enero 2011',
+    description: 'Filosofía Aquí y Ahora.',
+    imageUrl: '/imagenes/trabajos/trabajo-1.jpg',
+  },
+  {
+    year: 'Junio 2011 - Marzo 2023',
+    description: 'Mirta Te Acompaña',
+    imageUrl: '../src/assets/sobre-mi/timeline/mirta-te-acompaña.jpg',
+  },
+  {
+    year: 'Noviembre - Diciembre 2011',
+    description: 'Hablemos De Futbol',
+    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
+  },
+  {
+    year: '2012',
+    description: 'Video Clip - Agapornis ft.Miranda',
+    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
+  },
+  {
+    year: '2021 - Actualidad',
+    description: 'Argentina Fashion Week',
+    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
   },
   {
     year: '2022',
-    description: 'Descripción del trabajo o proyecto realizado en 2022.',
-    imageUrl: '/imagenes/trabajos/trabajo-2.jpg', // Reemplaza con la ruta a tu imagen
+    description: 'Video Clip - Phone by Dandara',
+    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
   },
   {
-    year: '2021',
-    description: 'Descripción del trabajo o proyecto realizado en 2021.',
-    imageUrl: '/imagenes/trabajos/trabajo-3.jpg', // Reemplaza con la ruta a tu imagen
+    year: '2023',
+    description: 'Huerta Orgánica con Paula Colombini',
+    imageUrl: '../src/assets/sobre-mi/timeline/huerta-paula-colombini.jpeg',
   },
-  // Puedes añadir más trabajos aquí...
+  {
+    year: '2026',
+    description: 'Exposición Tutankamon',
+    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
+  },
 ];
+
+// Componente para cada fila individual de la línea de tiempo
+const TimelineItem = ({ trabajo, index }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const itemRef = useRef(null);
+
+  // Detecta el scroll vertical de forma independiente para cada elemento
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target); // Deja de observar una vez que ya apareció
+        }
+      },
+      { threshold: 0.25 } // Se activa cuando se ve el 25% del elemento
+    );
+
+    if (itemRef.current) {
+      observer.observe(itemRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Si el índice es par va a la derecha, si es impar va a la izquierda
+  const side = index % 2 === 0 ? 'right' : 'left';
+
+  return (
+    <div
+      ref={itemRef}
+      className={`timeline-row ${side} ${isVisible ? 'revealed' : ''}`}
+    >
+      {/* El puntito sobre la línea del medio */}
+      <div className="timeline-dot"></div>
+
+      {/* El contenedor con la foto y la info */}
+      <article className="timeline-card">
+        <div className="timeline-image-wrapper">
+          <img src={trabajo.imageUrl} alt={`Trabajo del año ${trabajo.year}`} className="timeline-imagen" />
+        </div>
+        <div className="timeline-info">
+          <span className="timeline-year">{trabajo.year}</span>
+          <p>{trabajo.description}</p>
+        </div>
+      </article>
+    </div>
+  );
+};
 
 const SobreMi = () => {
   return (
     <div className="sobre-mi-container">
-      {/* Sección de Introducción */}
+      <h1 className="main-title">UN POCO DE MI HISTORIA</h1>
+      
       <section className="sobre-mi-intro">
         <div className="intro-texto">
-          <h1>Sobre Mí</h1>
           <p>
             Inicié mi camino en la estética en el año 2008, formándome en cosmetología y como maquilladora social. La búsqueda de mi 
             perfeccionamiento técnico me llevó al Instituto Superior de Arte del Teatro Colón, donde cursé Caracterización Teatral 
-            y sumé conocimientos de FX. Cuento con una trayectoria en productoras de televisión por cable. Mantengo una actualización 
-            constante en nuevas tecnologías de maquillaje, lo que me llevó en 2020 a graduarme como Maquilladora Profesional con 
+            y sumé conocimientos de FX. Cuentó con una trayectoria en productoras de televisión por cable. Mantengo una actualización 
+            constanate en nuevas tecnologías de maquillaje, lo que me llevó en 2020 a graduarme como Maquilladora Profesional con 
             Mabby Autino, expandiendo mi perfil hacia el maquillaje editorial y de pasarela. Desde entonces, acompaño a los mejores 
             diseñadores argentinos en propuestas que van desde desfiles y eventos hasta alfombras rojas.
           </p>
         </div>
         <div className="intro-imagen">
-          <img src="../src/assets/sobre-mi/lucia-sanchez-pfp-1" alt="Foto de perfil de Lucia Sanchez" />
+          <img src="../src/assets/sobre-mi/lucia-sanchez-pfp-1.jpeg" alt="Foto de perfil de Lucia Sanchez" />
         </div>
       </section>
 
@@ -48,15 +119,13 @@ const SobreMi = () => {
       {/* Sección de Línea de Tiempo */}
       <section className="timeline-section">
         <h2>Experiencia</h2>
-        <div className="timeline">
+        
+        <div className="timeline-vertical-container">
+          {/* La línea continua vertical del centro */}
+          <div className="timeline-center-line"></div>
+
           {trabajos.map((trabajo, index) => (
-            <div key={index} className="timeline-item">
-              <img src={trabajo.imageUrl} alt={`Trabajo del año ${trabajo.year}`} className="timeline-imagen" />
-              <div className="timeline-info">
-                <p>{trabajo.description}</p>
-                <span className="timeline-year">{trabajo.year}</span>
-              </div>
-            </div>
+            <TimelineItem key={index} trabajo={trabajo} index={index} />
           ))}
         </div>
       </section>
