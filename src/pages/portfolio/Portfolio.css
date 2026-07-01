@@ -1,68 +1,61 @@
-.portfolio-container {
-  width: 90%;
+/* Contenedor general de la página */
+.portfolio-main-wrapper {
+  width: 95%;
   max-width: 1200px;
-  margin: 4rem auto; /* Más espacio arriba y abajo */
+  margin: 4rem auto;
+  font-family: 'Poppins', sans-serif; /* Usando tu nueva fuente */
+}
+
+.portfolio-page-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #111;
+}
+
+/* EL SECRETO: Contenedor que alinea las dos columnas */
+.portfolio-columns-container {
   display: flex;
-  flex-direction: column;
-  gap: 3rem; /* Espacio entre la línea y el siguiente elemento */
-  color: var(--bordeaux);
+  flex-direction: row; /* Pone los elementos uno al lado del otro */
+  gap: 3rem;           /* Espacio de separación entre las dos columnas */
+  align-items: flex-start;
 }
 
-.portfolio-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 3rem; /* Espacio entre texto e imagen */
-}
-
-.portfolio-text {
-  flex: 1; /* Ocupa el 50% del espacio */
-  max-width: 50%;
-}
-
-.portfolio-text h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 0 0 1rem 0;
-  color: var(--bordeaux);
-}
-
-.portfolio-text p {
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-.portfolio-image {
-  flex: 1; /* Ocupa el otro 50% */
-  max-width: 45%; /* Un poco menos para que no se pegue */
-}
-
-.portfolio-image img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+/* Estilo base para cada una de las columnas */
+.portfolio-column {
+  flex: 1;             /* Hace que ambas columnas midan exactamente lo mismo (50% y 50%) */
+  background-color: #ffffff;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.portfolio-separator {
-  border: 0;
-  height: 1px;
-  background-color: var(--bordeaux);
-  opacity: 0.2;
-  margin: 0; /* El gap del contenedor principal ya da espacio */
+/* Títulos de cada columna */
+.portfolio-column h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0rem;
+  border-bottom: 2px solid #212529; /* Una línea sutil abajo del título */
+  padding-bottom: 0.5rem;
 }
 
-/* --- Responsive para Móviles --- */
+/* Contenedor interno de los elementos de cada columna */
+.column-content {
+  display: flex;
+  flex-direction: column; /* Los videos/fotos dentro de la columna van hacia abajo */
+  gap: 1.5rem;            /* Espacio entre cada foto o cada video */
+}
+
+/* Ejemplos visuales (puedes borrarlos cuando metas tus componentes reales) */
+.video-placeholder, .picture-placeholder {
+  background-color: #f5f5f5;
+  border: 1px dashed #ccc;
+  padding: 40px text-align center;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* --- RESPONSIVE: Si se mira desde un celular, las columnas se apilan una abajo de la otra --- */
 @media (max-width: 768px) {
-  .portfolio-item {
-    flex-direction: column-reverse; /* La imagen aparecerá arriba del texto */
-    text-align: center;
-  }
-
-  .portfolio-text,
-  .portfolio-image {
-    max-width: 100%;
+  .portfolio-columns-container {
+    flex-direction: column; /* Pasa de horizontal a vertical en pantallas chicas */
+    gap: 2rem;
   }
 }

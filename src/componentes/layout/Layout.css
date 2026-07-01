@@ -11,11 +11,11 @@
 
 /* Paleta de colores artística y oscura */
 :root {
-  --bordeaux: #8a2a2a; /* Burdeos más brillante para contraste en fondos oscuros */
-  --oro: #d4af37;
+  --bordeaux: #c48d8d; /* COLOR DE LETRAS */
+  --oro: #000000; /*COLOR EFECTO*/
   --fondo-principal: #1a1a1a; /* Negro carbón, no puro */
   --fondo-secundario: #2c2c2c; /* Gris oscuro para tarjetas y secciones */
-  --texto-principal: #e0e0e0; /* Blanco suave para lectura cómoda */
+  --texto-principal: #774242; /* Blanco suave para lectura cómoda */
   --blanco: #ffffff;
 }
 

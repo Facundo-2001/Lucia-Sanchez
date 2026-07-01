@@ -29,10 +29,17 @@ const SobreMi = () => {
       <section className="sobre-mi-intro">
         <div className="intro-texto">
           <h1>Sobre Mí</h1>
-          <p>Inicié mi camino en la estética en el año 2008, formándome en cosmetología y como maquilladora social. La búsqueda de mi perfeccionamiento técnico me llevó al Instituto Superior de Arte del Teatro Colón, donde cursé Caracterización Teatral y sumé conocimientos de FX. Cuento con una trayectoria en productoras de televisión por cable. Mantengo una actualización constante en nuevas tecnologías de maquillaje, lo que me llevó en 2020 a graduarme como Maquilladora Profesional con Mabby Autino, expandiendo mi perfil hacia el maquillaje editorial y de pasarela. Desde entonces, acompaño a los mejores diseñadores argentinos en propuestas que van desde desfiles y eventos hasta alfombras rojas.</p>
+          <p>
+            Inicié mi camino en la estética en el año 2008, formándome en cosmetología y como maquilladora social. La búsqueda de mi 
+            perfeccionamiento técnico me llevó al Instituto Superior de Arte del Teatro Colón, donde cursé Caracterización Teatral 
+            y sumé conocimientos de FX. Cuento con una trayectoria en productoras de televisión por cable. Mantengo una actualización 
+            constante en nuevas tecnologías de maquillaje, lo que me llevó en 2020 a graduarme como Maquilladora Profesional con 
+            Mabby Autino, expandiendo mi perfil hacia el maquillaje editorial y de pasarela. Desde entonces, acompaño a los mejores 
+            diseñadores argentinos en propuestas que van desde desfiles y eventos hasta alfombras rojas.
+          </p>
         </div>
         <div className="intro-imagen">
-          <img src="/imagenes/perfil.jpg" alt="Foto de perfil de Lucia Sanchez" />
+          <img src="../src/assets/sobre-mi/lucia-sanchez-pfp-1" alt="Foto de perfil de Lucia Sanchez" />
         </div>
       </section>
 

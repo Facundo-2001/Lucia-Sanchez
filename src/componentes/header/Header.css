@@ -17,7 +17,7 @@
 
 /* Asegurar que los enlaces del menú de navegación sean de color rojo oscuro */
 .main-header a:not(.header-logo) {
-  color: var(--bordeaux, #6b0d0d) !important;
+  color: var(--bordeaux, #8a7878) !important;
   font-size: 1.2rem; /* Aumenta el tamaño de la fuente de los enlaces */
   transition: color 0.3s ease, transform 0.3s ease;
   display: inline-block;

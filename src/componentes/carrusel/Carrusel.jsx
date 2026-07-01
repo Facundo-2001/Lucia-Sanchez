@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Carrusel.css';
 
-const Carrusel = ({ imagenes, intervalo = 3000 }) => {
+const Carrusel = ({ imagenes, intervalo = 5000 }) => {
   const [indiceActual, setIndiceActual] = useState(0);
 
   // Efecto para manejar el pase automático de las imágenes
