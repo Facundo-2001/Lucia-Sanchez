@@ -1,5 +1,5 @@
 import React from 'react';
-import './VideosProgramas.css'; // Tu CSS específico para los videos
+import './VideosProgramas.css'; 
 
 const videoItems = [
   {
@@ -8,14 +8,16 @@ const videoItems = [
     description: 'Maquillaje para video clip.',
     youtubeId: 'eLjRKb61g6U'
   }
-  // ... puedes agregar más aquí
 ];
 
 const VideosProgramas = () => {
   return (
-    /* Usamos una clase contenedora general idéntica a tus otras páginas */
     <div className="portfolio-subpage-container">
       <h1 className="subpage-title">Video Clips & Programas</h1>
+
+      <div>
+        <img className="images-container"  src="../src/assets/portfolio/dandara/dandara-1.jpeg" alt="" />
+      </div>
       
       <div className="videos-grid">
         {videoItems.map((item) => (

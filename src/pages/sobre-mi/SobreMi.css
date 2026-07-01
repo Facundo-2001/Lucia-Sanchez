@@ -51,14 +51,14 @@
   opacity: 0.2;
 }
 
-/* --- NUEVA SECCIÓN DE LÍNEA DE TIEMPO VERTICAL --- */
+/* --- SECCION VERTICAL --- */
 .timeline-section h2 {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 4rem;
 }
 
-/* Contenedor relativo para posicionar la línea central */
+/* CENTRAR LINEA */
 .timeline-vertical-container {
   position: relative;
   max-width: 1000px;
@@ -66,36 +66,36 @@
   padding: 2rem 0;
 }
 
-/* La línea negra/bordeaux del centro */
+
 .timeline-center-line {
   position: absolute;
   left: 50%;
   top: 0;
   bottom: 0;
   width: 4px;
-  background-color: var(--oro, #333);
+  background-color: var(--oro, #333); /* COLOR LINEA TIMELINE */
   transform: translateX(-50%);
   z-index: 1;
 }
 
-/* Fila de cada item (Ocupa el 100% del ancho del contenedor de la timeline) */
+/* FILA DE ITEM */
 .timeline-row {
   position: relative;
   width: 100%;
   margin-bottom: 5rem;
   display: flex;
-  /* Estado inicial antes de la animación al hacer scroll */
+  /* ESTADO INICIAL ANIMACION */
   opacity: 0;
   transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Ajustes cuando la tarjeta va a la DERECHA */
+/* TARJETA DERECHA */
 .timeline-row.right {
   justify-content: flex-end;
   transform: translateX(80px) scale(0.9);
 }
 
-/* Ajustes cuando la tarjeta va a la IZQUIERDA */
+/* TARJETA IZQUIERDA */
 .timeline-row.left {
   justify-content: flex-start;
   transform: translateX(-80px) scale(0.9);
@@ -107,7 +107,7 @@
   transform: translateX(0) scale(1);
 }
 
-/* La Tarjeta (Ocupa un poco menos del 50% para no pisar la línea del medio) */
+/* FORMATO GENERAL TARJETA */
 .timeline-card {
   width: 45%;
   background-color: #ffffff;
@@ -117,7 +117,7 @@
   border: 1px solid #f0f0f0;
 }
 
-/* El Punto Central */
+/* PUNTO DEL TIMELINE*/
 .timeline-dot {
   position: absolute;
   left: 50%;
@@ -132,7 +132,6 @@
   box-shadow: 0 0 0 3px var(--bordeaux);
 }
 
-/* Contenedor de la Imagen dentro de la tarjeta */
 .timeline-image-wrapper {
   width: 100%;
   height: 240px;
@@ -147,10 +146,10 @@
 }
 
 .timeline-card:hover .timeline-imagen {
-  transform: scale(1.04); /* Pequeño zoom elegante al pasar el mouse */
+  transform: scale(1.04); /* ZOOM DETECCION MOUSE */
 }
 
-/* Textos dentro de la tarjeta */
+/* TEXTOS DE TARJETA:FORMATO */
 .timeline-info {
   padding: 1.5rem;
   text-align: left;
@@ -158,22 +157,20 @@
 
 .timeline-year {
   display: inline-block;
-  font-family: 'Noto+Sans+KR', sans-serif;
   font-size: 1.3rem;
   font-weight: bold;
-  color: var(#000000, #000000);
+  color: var(--oro, #d4af37);
   margin-bottom: 0.5rem;
 }
 
 .timeline-info p {
-  font-family: 'Noto+Sans+KR', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   color: #444;
   margin: 0;
 }
 
-/* --- RESPONSIVE PARA MÓVILES (Cambio drástico para pantallas chicas) --- */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .sobre-mi-intro {
     flex-direction: column;
@@ -190,7 +187,7 @@
     height: 320px;
   }
 
-  /* En móviles, movemos la línea central hacia la izquierda */
+  /* TELEFONOS JUSTIFICA A LA IZQUIERDA */
   .timeline-center-line {
     left: 20px;
     transform: none;
@@ -201,10 +198,9 @@
     transform: translateX(-50%);
   }
 
-  /* Todas las tarjetas pasan a ocupar casi todo el ancho y se alinean a la derecha de la línea */
   .timeline-row.left, .timeline-row.right {
     justify-content: flex-end;
-    transform: translateY(40px); /* En móviles la animación viene desde abajo */
+    transform: translateY(40px);
   }
 
   .timeline-row.revealed {

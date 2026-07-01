@@ -1,0 +1,7 @@
+.image-container{
+    font-family: 'Noto+Sans+KR', sans-serif;
+    height: 500px;
+    width: 500px;
+
+    display: inline-flex;
+}

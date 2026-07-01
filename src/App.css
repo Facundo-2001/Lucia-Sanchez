@@ -183,7 +183,9 @@
   }
 }
 
-/* PAGINAS AGREGADAS */
+
+/* NUEVAS SECCIONES */
+/* Margen y ancho idéntico al de tu Portfolio principal */
 .portfolio-subpage-container {
   width: 90%;
   max-width: 1200px;

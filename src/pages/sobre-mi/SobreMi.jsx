@@ -3,62 +3,61 @@ import './SobreMi.css';
 
 const trabajos = [
   {
-    year: 'Dicciembre - Enero 2011',
-    description: 'Filosofía Aquí y Ahora.',
+    year: '2011',
+    description: 'Filosofia...',
     imageUrl: '/imagenes/trabajos/trabajo-1.jpg',
   },
   {
-    year: 'Junio 2011 - Marzo 2023',
+    year: '2011',
     description: 'Mirta Te Acompaña',
     imageUrl: '../src/assets/sobre-mi/timeline/mirta-te-acompaña.jpg',
   },
   {
-    year: 'Noviembre - Diciembre 2011',
-    description: 'Hablemos De Futbol',
+    year: '2011',
+    description: 'Descripción del trabajo o proyecto realizado en 2021.',
     imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
   },
   {
     year: '2012',
-    description: 'Video Clip - Agapornis ft.Miranda',
+    description: 'Descripción del trabajo o proyecto realizado en 2021.',
+    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
+  },
+  {
+    year: '2013',
+    description: 'Descripción del trabajo o proyecto realizado en 2021.',
     imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
   },
   {
     year: '2021 - Actualidad',
-    description: 'Argentina Fashion Week',
-    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
-  },
-  {
-    year: '2022',
-    description: 'Video Clip - Phone by Dandara',
+    description: 'Descripción del trabajo o proyecto realizado en 2021.',
     imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
   },
   {
     year: '2023',
-    description: 'Huerta Orgánica con Paula Colombini',
+    description: 'Huerta Organica con Paula Colombini',
     imageUrl: '../src/assets/sobre-mi/timeline/huerta-paula-colombini.jpeg',
   },
   {
     year: '2026',
-    description: 'Exposición Tutankamon',
-    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
+    description: 'Tutankamon - Jefa de Maquillaje',
+    imageUrl: '../src/assets/sobre-mi/timeline/huerta-paula-colombini.jpeg',
   },
 ];
 
-// Componente para cada fila individual de la línea de tiempo
 const TimelineItem = ({ trabajo, index }) => {
   const [isVisible, setIsVisible] = useState(false);
   const itemRef = useRef(null);
 
-  // Detecta el scroll vertical de forma independiente para cada elemento
+  /* DETECTAR SCROLL VERTICAL */
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target); // Deja de observar una vez que ya apareció
+          observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.25 } // Se activa cuando se ve el 25% del elemento
+      { threshold: 0.25 } // INCIA CUANDO DETECTA 25% DEL ELEMENTO
     );
 
     if (itemRef.current) {
@@ -68,7 +67,7 @@ const TimelineItem = ({ trabajo, index }) => {
     return () => observer.disconnect();
   }, []);
 
-  // Si el índice es par va a la derecha, si es impar va a la izquierda
+  // PAR == DERECHA, IMPAR == IZQUIERDA
   const side = index % 2 === 0 ? 'right' : 'left';
 
   return (
@@ -76,10 +75,8 @@ const TimelineItem = ({ trabajo, index }) => {
       ref={itemRef}
       className={`timeline-row ${side} ${isVisible ? 'revealed' : ''}`}
     >
-      {/* El puntito sobre la línea del medio */}
       <div className="timeline-dot"></div>
 
-      {/* El contenedor con la foto y la info */}
       <article className="timeline-card">
         <div className="timeline-image-wrapper">
           <img src={trabajo.imageUrl} alt={`Trabajo del año ${trabajo.year}`} className="timeline-imagen" />
@@ -116,12 +113,10 @@ const SobreMi = () => {
 
       <hr className="sobre-mi-separator" />
 
-      {/* Sección de Línea de Tiempo */}
       <section className="timeline-section">
         <h2>Experiencia</h2>
         
         <div className="timeline-vertical-container">
-          {/* La línea continua vertical del centro */}
           <div className="timeline-center-line"></div>
 
           {trabajos.map((trabajo, index) => (

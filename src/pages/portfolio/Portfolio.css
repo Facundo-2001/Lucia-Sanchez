@@ -1,7 +1,7 @@
 /* Contenedor general */
 .portfolio-main-wrapper {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1900px;
   margin: 4rem auto;
   font-family: 'Poppins', sans-serif;
 }
@@ -15,25 +15,25 @@
   letter-spacing: 2px;
 }
 
-/* CONTENEDOR PRINCIPAL: Pone las dos portadas una al lado de la otra */
+/* ORIENTACION PORTADAS */
 .portfolio-grid-covers {
   display: flex;
   flex-direction: row;
-  gap: 2rem; /* Espacio de separación entre ambas portadas */
+  gap: 2rem; /* SEPARACION ENTRE PORTADAS */
   width: 100%;
 }
 
-/* ESTILO BASE PARA CADA PORTADA (El enlace completo) */
+/* ESTILO PORTADA */
 .portfolio-cover-card {
-  flex: 1; /* Hace que midan exactamente 50% y 50% cada una */
-  height: 500px; /* Altura de las portadas (puedes subirla o bajarla a gusto) */
-  width: 500px;
+  flex: 1; /* 50/50 DEL CONTENIDO */
+  height: 550px; /* ALTURA PORTADA */
+  width: 900px;  /* ANCHO PORTADA */
   border-radius: 8px;
   overflow: hidden;
   text-decoration: none !important;
   position: relative;
   
-  /* Configuración general del fondo */
+  /* SETTING FONDO */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -44,28 +44,28 @@
 
 
 .video-cover {
-  background-image: url('/imagenes/portfolio/dandara.jpg'); /* VIDEOS PORTADA */
+  background-image: url('../src/assets/portfolio/paula-colombini/huerta-paula-colombini.jpeg'); /* VIDEOS PORTADA */
 }
 
 .eventos-cover {
-  background-image: url('/imagenes/portfolio/foto1.jpg'); /* FOTOS PORTADA */
+  background-image: url('../src/assets/portfolio/eventos-portada.jpg'); /* FOTOS PORTADA */
 }
 
-/* CAPA OSCURA INTERNA: Para mejorar la lectura del texto y centrarlo */
+/* CAPA POR ENCIMA */
 .cover-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Capa oscura inicial (40%) */
+  background-color: rgba(0, 0, 0, 0.4); /* OPACIDAD CAPA */
   display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color 0.4s ease;
 }
 
-/* Títulos dentro de las portadas */
+/* TITULOS PORTADA */
 .cover-overlay h2 {
   color: #ffffff !important;
   font-size: 1.8rem;
@@ -80,32 +80,36 @@
   transition: all 0.4s ease;
 }
 
-/* --- EFECTOS INTERACTIVOS (HOVER) --- */
+/* --- HOVER --- */
 
 .portfolio-cover-card:hover {
-  transform: translateY(-8px); /* Eleva la tarjeta suavemente */
+  transform: translateY(-8px); /* MOVIMIENTO TARJETA */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* Al pasar el mouse, aclaramos un poco el fondo y destacamos el título */
+/* REACTIVE MOUSE */
 .portfolio-cover-card:hover .cover-overlay {
-  background-color: rgba(114, 47, 55, 0.5); /* Se tiñe sutilmente de tu color burdeos/bordeaux */
+  background-color: rgba(255, 255, 255, 0.5); /* CAMBIO COLOR PORTADA */
 }
 
 .portfolio-cover-card:hover .cover-overlay h2 {
-  color: var(--oro, #d4af37) !important; /* El texto pasa a color oro */
-  border-color: var(--oro, #d4af37);     /* Aparece una línea inferior dorada */
+  color: var(--oro, #d4af37) !important; /* TEXTO PASA A NEGRO */
+  /*border-color: var(--oro, #d4af37);     /* LINEA ABAJO DEL TEXTO */
   transform: scale(1.03);
 }
 
 /* --- RESPONSIVE: En celulares se apilan verticalmente --- */
 @media (max-width: 768px) {
+
+
   .portfolio-grid-covers {
-    flex-direction: column; /* Cambia a vertical */
+    flex-direction: column;
     gap: 1.5rem;
+    width: 300px;
   }
   
   .portfolio-cover-card {
-    height: 350px; /* Reducimos la altura en pantallas chicas */
+    height: 350px;
+    width: 300px !important;
   }
 }

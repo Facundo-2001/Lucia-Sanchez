@@ -4,9 +4,7 @@ import './Portfolio.css';
 
 const Portfolio = () => {
   return (
-    <div className='portfolio-main-wrapper'> 
-      <h1 className='portfolio-page-title'>Portfolio</h1>   
-      
+    <div className='portfolio-main-wrapper'>     
       <div className='portfolio-grid-covers'>
         
         {/* PORTADA 1: VIDEOS Y PROGRAMAS */}

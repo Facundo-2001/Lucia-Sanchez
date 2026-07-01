@@ -1,5 +1,5 @@
 import React from 'react';
-import './Eventos.css'; 
+import './Eventos.css';
 
 const pictureItems = [
   {
@@ -8,12 +8,10 @@ const pictureItems = [
     description: 'Descripción de la sesión de fotos.',
     imageUrl: '/imagenes/portfolio/foto1.jpg'
   }
-  // ... puedes agregar más aquí
 ];
 
 const Eventos = () => {
   return (
-    /* Mismo contenedor para mantener la simetría y los márgenes en toda la web */
     <div className="portfolio-subpage-container">
       <h1 className="subpage-title">Eventos</h1>
       
