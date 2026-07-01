@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <header className="main-header">
       <Link to="/" className="header-logo">
-        <img src="/logos/LogoHeader.png" alt="Logo de Lucia Sanchez" className="header-logo-img" />
+        <img src="../src/assets/header/lucia-sanchez-logo.png" alt="Logo de Lucia Sanchez" className="header-logo-img" />
       </Link>
 
       {/* Botón Hamburguesa (solo visible en móviles por CSS) */}
