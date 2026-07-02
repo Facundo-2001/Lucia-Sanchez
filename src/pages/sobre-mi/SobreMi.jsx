@@ -24,13 +24,13 @@ const trabajos = [
   },
   {
     year: '2013',
-    description: 'El Ultimo Round',
-    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
+    description: 'El Ultimo Round - Norberto Rodriguez Arian',
+    imageUrl: '../src/assets/sobre-mi/timeline/norberto-rodriguez-arian-ultimo-round.JPG',
   },
   {
     year: '2021 - Actualidad',
     description: 'Argentina Fashion Week',
-    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
+    imageUrl: '../src/assets/sobre-mi/timeline/arfw.jpg',
   },
   {
     year: '2022',
