@@ -1,6 +1,8 @@
 import React from 'react';
 import './Footer.css';
 import { Link } from 'react-router-dom';
+import logo from '/assets/header/lucia-sanchez-logo.png';
+import instagramIcon from '/assets/footer/instagram-logo.webp';
 
 const Footer = () => {
   return (
@@ -8,7 +10,7 @@ const Footer = () => {
       <div className="footer-content">
         {/* Sección Izquierda: Logo y Contacto */}
         <div className="footer-section footer-logo-contact">
-          <img src="../src/assets/header/lucia-sanchez-logo.png" alt="Logo" className="footer-logo" />
+          <img src={logo} alt="Logo" className="footer-logo" />
           <a href="mailto:contacto@gmail.com" className="footer-email">contacto@gmail.com</a>
         </div>
 
@@ -28,7 +30,7 @@ const Footer = () => {
         <div className="footer-section footer-social">
           <a href="https://www.instagram.com/lusanchez.makeup?igsh=MTkzMG13aWhqOWZzYg==" target="_blank" rel="noopener noreferrer" className="social-link">
             {/* Aquí podrías usar un componente de icono SVG si lo tienes */}
-            <img src="../src/assets/footer/instagram-logo.webp" alt="Instagram" className="footer-icon" />
+            <img src={instagramIcon} alt="Instagram" className="footer-icon" />
             <span>Instagram</span>
           </a>
         </div>

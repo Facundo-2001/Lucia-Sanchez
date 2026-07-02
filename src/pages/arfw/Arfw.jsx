@@ -1,13 +1,12 @@
 import React from 'react';
 import Carrusel from '../../componentes/carrusel/Carrusel.jsx';
 import './Arfw.css';
+import img1 from '/assets/home/makeup-arfw.jpeg';
+import img2 from '/assets/home/makeup-arfw-2.jpeg';
+import img3 from '/assets/home/makeup-arfw-3.jpeg';
 
 // Define aquí las rutas a las imágenes que quieres mostrar en el carrusel.
-const imagenesHome = [
-  '/assets/home/makeup-arfw.jpeg', // Reemplaza con la ruta a tu imagen 1
-  '/assets/home/makeup-arfw-2.jpeg', // Reemplaza con la ruta a tu imagen 2
-  '/assets/home/makeup-arfw-3.jpeg', // Reemplaza con la ruta a tu imagen 3
-];
+const imagenesHome = [img1, img2, img3];
 
 const Arfw = () => {
   return (

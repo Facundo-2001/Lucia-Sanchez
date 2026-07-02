@@ -1,51 +1,60 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './SobreMi.css';
+import imgFilosofia from '/assets/sobre-mi/timeline/filosofia-y-mas.jpg';
+import imgMirta from '/assets/sobre-mi/timeline/mirta-te-acompaña.jpg';
+import imgPerfumo from '/assets/sobre-mi/timeline/roberto-perfumo.jpg';
+import imgNorberto from '/assets/sobre-mi/timeline/norberto-rodriguez-arian-ultimo-round.JPG';
+import imgArfw from '/assets/sobre-mi/timeline/arfw.jpg';
+import imgDandara from '/assets/sobre-mi/timeline/dandara-phone.jpeg';
+import imgHuerta from '/assets/sobre-mi/timeline/huerta-paula-colombini.jpeg';
+import imgTutankamon from '/assets/sobre-mi/timeline/tutankamon.jpg';
+import imgPerfil from '/assets/sobre-mi/lucia-sanchez-pfp-1.jpeg';
 
 const trabajos = [
   {
     year: '2011',
     description: 'Filosofia Aquí y Ahora',
-    imageUrl: '/assets/sobre-mi/timeline/filosofia-y-mas.jpg',
+    imageUrl: imgFilosofia,
   },
   {
     year: '2011 - 2023',
     description: 'Mirta Te Acompaña',
-    imageUrl: '/assets/sobre-mi/timeline/mirta-te-acompaña.jpg',
+    imageUrl: imgMirta,
   },
   {
     year: '2011',
     description: 'Perfumo y El Mejor Ejemplar',
-    imageUrl: '/assets/sobre-mi/timeline/roberto-perfumo.jpg',
+    imageUrl: imgPerfumo,
   },
   {
     year: '2012',
     description: 'Perfecta - Agapornis ft.Miranda',
-    imageUrl: '/imagenes/trabajos/trabajo-3.jpg', //NO OLVIDAR IMAGEN
+    imageUrl: null,
   },
   {
     year: '2013',
     description: 'El Ultimo Round - Norberto Rodriguez Arian',
-    imageUrl: '/assets/sobre-mi/timeline/norberto-rodriguez-arian-ultimo-round.JPG',
+    imageUrl: imgNorberto,
   },
   {
     year: '2021 - Actualidad',
     description: 'Argentina Fashion Week',
-    imageUrl: '/assets/sobre-mi/timeline/arfw.jpg',
+    imageUrl: imgArfw,
   },
   {
     year: '2022',
     description: 'Phone - Dandara',
-    imageUrl: '/assets/sobre-mi/timeline/dandara-phone.jpeg',
+    imageUrl: imgDandara,
   },
   {
     year: '2023',
     description: 'Huerta Organica con Paula Colombini',
-    imageUrl: '/assets/sobre-mi/timeline/huerta-paula-colombini.jpeg',
+    imageUrl: imgHuerta,
   },
   {
     year: '2026',
     description: 'Tutankamon - Jefa de Maquillaje',
-    imageUrl: '/assets/sobre-mi/timeline/tutankamon.jpg',
+    imageUrl: imgTutankamon,
   },
 ];
 
@@ -84,7 +93,11 @@ const TimelineItem = ({ trabajo, index }) => {
 
       <article className="timeline-card">
         <div className="timeline-image-wrapper">
-          <img src={trabajo.imageUrl} alt={`Trabajo del año ${trabajo.year}`} className="timeline-imagen" />
+          {trabajo.imageUrl ? (
+            <img src={trabajo.imageUrl} alt={`Trabajo del año ${trabajo.year}`} className="timeline-imagen" />
+          ) : (
+            <div className="timeline-imagen-placeholder"></div>
+          )}
         </div>
         <div className="timeline-info">
           <span className="timeline-year">{trabajo.year}</span>
@@ -111,7 +124,7 @@ const SobreMi = () => {
           </p>
         </div>
         <div className="intro-imagen">
-          <img src="/assets/sobre-mi/lucia-sanchez-pfp-1.jpeg" alt="Foto de perfil de Lucia Sanchez" />
+          <img src={imgPerfil} alt="Foto de perfil de Lucia Sanchez" />
         </div>
       </section>
 

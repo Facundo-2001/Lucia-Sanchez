@@ -30,7 +30,8 @@ const Carrusel = ({ imagenes, intervalo = 5000 }) => {
       {imagenes.map((imagen, index) => (
         <div
           key={index}
-          className={`carrusel-slide ${index === indiceActual ? 'activa' : ''}`}
+          className="carrusel-slide"
+          style={{ opacity: index === indiceActual ? 1 : 0 }}
         >
           <img src={imagen} alt={`Slide ${index + 1}`} className="carrusel-imagen" />
         </div>

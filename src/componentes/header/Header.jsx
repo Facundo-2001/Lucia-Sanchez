@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '/assets/header/lucia-sanchez-logo.png';
 import Nav from '../nav/Nav.jsx'; // Importamos el componente Nav
 import './Header.css';
 
@@ -20,7 +21,7 @@ const Header = () => {
   return (
     <header className="main-header">
       <Link to="/" className="header-logo">
-        <img src="../src/assets/header/lucia-sanchez-logo.png" alt="Logo de Lucia Sanchez" className="header-logo-img" />
+        <img src={logo} alt="Logo de Lucia Sanchez" className="header-logo-img" />
       </Link>
 
       {/* Botón Hamburguesa (solo visible en móviles por CSS) */}
