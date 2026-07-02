@@ -7,7 +7,7 @@ const Nav = () => {
     <nav className="navbar">
       <ul className="nav-list">
         <li className="nav-item">
-          <Link to="/">ARFW</Link>
+          <Link to="/">INICIO</Link>
         </li>
         <li className="dropdown-item">
             {/* El link principal que los lleva a la portada del portfolio */}

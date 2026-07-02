@@ -16,6 +16,7 @@
 
 /* --- Sección de Introducción --- */
 .sobre-mi-intro {
+  font-family: 'Noto+Sans+KR', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -109,6 +110,7 @@
 
 /* FORMATO GENERAL TARJETA */
 .timeline-card {
+  font-family: 'Noto+Sans+KR', sans-serif;
   width: 45%;
   background-color: #ffffff;
   border-radius: 8px;
@@ -149,8 +151,9 @@
   transform: scale(1.04); /* ZOOM DETECCION MOUSE */
 }
 
-/* TEXTOS DE TARJETA:FORMATO */
+/* DESCRIPCION */
 .timeline-info {
+  font-family: 'Noto+Sans+KR', sans-serif;
   padding: 1.5rem;
   text-align: left;
 }

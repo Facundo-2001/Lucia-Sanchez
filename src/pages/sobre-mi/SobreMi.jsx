@@ -4,7 +4,7 @@ import './SobreMi.css';
 const trabajos = [
   {
     year: '2011',
-    description: 'Filosofia Aqu+i y Ahora',
+    description: 'Filosofia Aquí y Ahora',
     imageUrl: '../src/assets/sobre-mi/timeline/filosofia-y-mas.jpg',
   },
   {
@@ -20,7 +20,7 @@ const trabajos = [
   {
     year: '2012',
     description: 'Perfecta - Agapornis ft.Miranda',
-    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
+    imageUrl: '/imagenes/trabajos/trabajo-3.jpg', //NO OLVIDAR IMAGEN
   },
   {
     year: '2013',
