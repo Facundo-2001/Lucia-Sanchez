@@ -207,14 +207,17 @@
 
 .videos-grid {
   padding: 100px;
-  width: 700px;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
   gap: 2.5rem; /* DISCTANCIA ENTRE TARJETAS DEL MISMO TIPO */
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 }
 
 .eventos-grid {
-  width: 700px;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
   gap: 2.5rem; /* DISCTANCIA ENTRE TARJETAS DEL MISMO TIPO */

@@ -34,3 +34,10 @@
   border-left: none;
   border-right: none;
 }
+
+@media (max-width: 768px) {
+  .arfw-container .carrusel-container {
+    width: 100vw;
+    height: 50vh;
+  }
+}
