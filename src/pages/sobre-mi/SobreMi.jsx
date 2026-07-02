@@ -5,17 +5,17 @@ const trabajos = [
   {
     year: '2011',
     description: 'Filosofia Aquí y Ahora',
-    imageUrl: '../src/assets/sobre-mi/timeline/filosofia-y-mas.jpg',
+    imageUrl: '/assets/sobre-mi/timeline/filosofia-y-mas.jpg',
   },
   {
     year: '2011 - 2023',
     description: 'Mirta Te Acompaña',
-    imageUrl: '../src/assets/sobre-mi/timeline/mirta-te-acompaña.jpg',
+    imageUrl: '/assets/sobre-mi/timeline/mirta-te-acompaña.jpg',
   },
   {
     year: '2011',
     description: 'Perfumo y El Mejor Ejemplar',
-    imageUrl: '../src/assets/sobre-mi/timeline/roberto-perfumo.jpg',
+    imageUrl: '/assets/sobre-mi/timeline/roberto-perfumo.jpg',
   },
   {
     year: '2012',
@@ -25,27 +25,27 @@ const trabajos = [
   {
     year: '2013',
     description: 'El Ultimo Round - Norberto Rodriguez Arian',
-    imageUrl: '../src/assets/sobre-mi/timeline/norberto-rodriguez-arian-ultimo-round.JPG',
+    imageUrl: '/assets/sobre-mi/timeline/norberto-rodriguez-arian-ultimo-round.JPG',
   },
   {
     year: '2021 - Actualidad',
     description: 'Argentina Fashion Week',
-    imageUrl: '../src/assets/sobre-mi/timeline/arfw.jpg',
+    imageUrl: '/assets/sobre-mi/timeline/arfw.jpg',
   },
   {
     year: '2022',
     description: 'Phone - Dandara',
-    imageUrl: '../src/assets/sobre-mi/timeline/dandara-phone.jpeg',
+    imageUrl: '/assets/sobre-mi/timeline/dandara-phone.jpeg',
   },
   {
     year: '2023',
     description: 'Huerta Organica con Paula Colombini',
-    imageUrl: '../src/assets/sobre-mi/timeline/huerta-paula-colombini.jpeg',
+    imageUrl: '/assets/sobre-mi/timeline/huerta-paula-colombini.jpeg',
   },
   {
     year: '2026',
     description: 'Tutankamon - Jefa de Maquillaje',
-    imageUrl: '../src/assets/sobre-mi/timeline/tutankamon.jpg',
+    imageUrl: '/assets/sobre-mi/timeline/tutankamon.jpg',
   },
 ];
 
@@ -111,7 +111,7 @@ const SobreMi = () => {
           </p>
         </div>
         <div className="intro-imagen">
-          <img src="../src/assets/sobre-mi/lucia-sanchez-pfp-1.jpeg" alt="Foto de perfil de Lucia Sanchez" />
+          <img src="/assets/sobre-mi/lucia-sanchez-pfp-1.jpeg" alt="Foto de perfil de Lucia Sanchez" />
         </div>
       </section>
 

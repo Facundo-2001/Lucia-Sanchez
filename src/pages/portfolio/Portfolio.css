@@ -44,11 +44,11 @@
 
 
 .video-cover {
-  background-image: url('../src/assets/portfolio/videos-programas-portada.jpeg'); /* VIDEOS PORTADA */
+  background-image: url('/assets/portfolio/videos-programas-portada.jpeg'); /* VIDEOS PORTADA */
 }
 
 .eventos-cover {
-  background-image: url('../src/assets/portfolio/eventos-portada.jpg'); /* FOTOS PORTADA */
+  background-image: url('/assets/portfolio/eventos-portada.jpg'); /* FOTOS PORTADA */
 }
 
 /* CAPA POR ENCIMA */
