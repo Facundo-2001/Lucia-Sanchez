@@ -4,37 +4,37 @@ import './SobreMi.css';
 const trabajos = [
   {
     year: '2011',
-    description: 'Filosofia...',
+    description: 'Filosofia Aqu+i y Ahora',
     imageUrl: '../src/assets/sobre-mi/timeline/filosofia-y-mas.jpg',
   },
   {
-    year: '2011 - 2021',
+    year: '2011 - 2023',
     description: 'Mirta Te Acompaña',
     imageUrl: '../src/assets/sobre-mi/timeline/mirta-te-acompaña.jpg',
   },
   {
     year: '2011',
-    description: 'Descripción del trabajo o proyecto realizado en 2021.',
-    imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
+    description: 'Perfumo y El Mejor Ejemplar',
+    imageUrl: '../src/assets/sobre-mi/timeline/roberto-perfumo.jpg',
   },
   {
     year: '2012',
-    description: 'Descripción del trabajo o proyecto realizado en 2021.',
+    description: 'Perfecta - Agapornis ft.Miranda',
     imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
   },
   {
     year: '2013',
-    description: 'Descripción del trabajo o proyecto realizado en 2021.',
+    description: 'El Ultimo Round',
     imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
   },
   {
     year: '2021 - Actualidad',
-    description: 'Descripción del trabajo o proyecto realizado en 2021.',
+    description: 'Argentina Fashion Week',
     imageUrl: '/imagenes/trabajos/trabajo-3.jpg',
   },
   {
     year: '2022',
-    description: 'Dandara: Phone - Video Clip.',
+    description: 'Phone - Dandara',
     imageUrl: '../src/assets/sobre-mi/timeline/dandara-phone.jpeg',
   },
   {
@@ -98,7 +98,6 @@ const TimelineItem = ({ trabajo, index }) => {
 const SobreMi = () => {
   return (
     <div className="sobre-mi-container">
-      <h1 className="main-title">UN POCO DE MI HISTORIA</h1>
       
       <section className="sobre-mi-intro">
         <div className="intro-texto">

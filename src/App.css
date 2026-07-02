@@ -185,15 +185,18 @@
 
 
 /* NUEVAS SECCIONES */
-/* Margen y ancho idéntico al de tu Portfolio principal */
 .portfolio-subpage-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 4rem auto; /* Da espacio abajo del header y arriba del footer */
-  font-family: 'Poppins', sans-serif;
+  width: 95%;
+  max-width: 1400px;
+  margin: 1rem auto;
+  font-family: 'Noto+Sans+KR', sans-serif;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: row;
+  gap: 1rem; 
 }
 
-/* Títulos alineados */
 .subpage-title {
   text-align: center;
   margin-bottom: 3rem;
@@ -202,15 +205,21 @@
   text-transform: uppercase;
 }
 
-/* --- DISEÑO DE GRILLA (Para que los items se acomoden solos) --- */
-.videos-grid, .eventos-grid {
+.videos-grid {
+  padding: 100px;
+  width: 700px;
   display: grid;
-  /* Crea columnas de mínimo 300px que se acomodan solas según el tamaño de la pantalla */
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
-  gap: 2.5rem; /* Distancia entre tarjetas */
+  gap: 2.5rem; /* DISCTANCIA ENTRE TARJETAS DEL MISMO TIPO */
 }
 
-/* Formato de las tarjetas de fotos individuales */
+.eventos-grid {
+  width: 700px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+  gap: 2.5rem; /* DISCTANCIA ENTRE TARJETAS DEL MISMO TIPO */
+}
+
 .eventos-card {
   background-color: #ffffff;
   border-radius: 8px;

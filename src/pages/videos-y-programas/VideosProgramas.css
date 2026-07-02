@@ -5,3 +5,30 @@
 
     display: inline-flex;
 }
+
+.image-container-2{
+    font-family: 'Noto+Sans+KR', sans-serif;
+    height: 500px;
+    width: 500px;
+
+    display: inline-flex;
+}
+
+.video-responsive-frame iframe {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 768px) {
+    .portfolio-subpage-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 1rem auto;
+        font-family: 'Noto+Sans+KR', sans-serif;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: column;
+    }
+}
