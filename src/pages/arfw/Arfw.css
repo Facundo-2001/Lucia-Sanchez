@@ -27,9 +27,9 @@
 
 /* Hacemos que el carrusel ocupe todo el ancho y tenga una altura considerable */
 .arfw-container .carrusel-container {
-  width: 50vw; /* Ocupa el 100% del ancho de la ventana */
+  width: 50vw; /* Ocupa el 60% del ancho de la ventana */
   max-width: 90vw;
-  height: 70vh; /* 70% de la altura de la ventana */
+  height: 90vh; /* 70% de la altura de la ventana */
   border-radius: 0; /* Quitamos el borde redondeado para que se ajuste a los bordes */
   border-left: none;
   border-right: none;
