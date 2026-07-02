@@ -7,5 +7,5 @@ export default defineConfig({
   plugins: [react({
     compiler: babel({ presets: [reactCompilerPreset()] })
   })],
-  base: '/Lucia-Sanchez/'
+  base: '/'
 })
