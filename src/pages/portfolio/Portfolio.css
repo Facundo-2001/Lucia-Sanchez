@@ -99,17 +99,32 @@
 }
 
 /* --- RESPONSIVE: En celulares se apilan verticalmente --- */
+/* --- RESPONSIVE: En celulares se apilan verticalmente ocupando todo el ancho --- */
+/* --- RESPONSIVE: En celulares se apilan verticalmente --- */
+/* --- RESPONSIVE: En celulares se apilan verticalmente --- */
 @media (max-width: 768px) {
 
+  .portfolio-main-wrapper {
+    width: 95%; /* Le da un pequeño margen a los costados en el celular */
+    margin: 2rem auto;
+  }
 
   .portfolio-grid-covers {
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 300px;
+    flex-direction: column;   /* Apila una tarjeta debajo de la otra */
+    gap: 1.5rem;              /* Mantiene la separación */
+    width: 100%;              /* Cambiado de 300px a 100% */
+    max-width: 100%;          /* Asegura que el contenedor no estire la pantalla */
   }
   
   .portfolio-cover-card {
-    height: 350px;
-    width: 300px !important;
+    height: 350px;            /* Mantiene tu altura estética original */
+    
+    /* 🌟 AQUÍ ESTÁ EL TRUCO: */
+    width: 100% !important;   /* Aplasta el '900px' de PC y lo obliga a medir el 100% del cel */
+    max-width: 100%;          /* Bloquea cualquier desborde horizontal */
+  }
+
+  .cover-overlay h2 {
+    font-size: 1.5rem;        /* Achica un pelo el texto para que entre cómodo en pantallas chicas */
   }
 }

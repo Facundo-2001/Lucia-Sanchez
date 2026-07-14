@@ -18,7 +18,7 @@ const Nav = () => {
             {/* La lista desplegable con tus subítems */}
             <ul className="dropdown-menu">
               <li>
-                <Link to="/videos-y-programas">Video Clips & Programas</Link>
+                <Link to="/videos-y-programas">VideoClips & Programas</Link>
               </li>
               <li>
                 <Link to="/eventos">Eventos</Link>

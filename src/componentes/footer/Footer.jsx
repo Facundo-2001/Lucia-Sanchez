@@ -11,7 +11,7 @@ const Footer = () => {
         {/* Sección Izquierda: Logo y Contacto */}
         <div className="footer-section footer-logo-contact">
           <img src={logo} alt="Logo" className="footer-logo" />
-          <a href="mailto:contacto@gmail.com" className="footer-email">contacto@gmail.com</a>
+          <a href="mailto:lusanchezmua@gmail.com" className="footer-email">lusanchezmua@gmail.com</a>
         </div>
 
         {/* Sección Central: Columnas de enlaces */}

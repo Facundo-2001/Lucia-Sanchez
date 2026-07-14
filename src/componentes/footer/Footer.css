@@ -5,6 +5,8 @@
   padding: 2rem 5%; /* Añadimos padding lateral */
   border-top: none;
   margin-top: auto;
+  box-sizing: border-box; 
+  overflow: hidden;
 }
 
 .footer-content {
