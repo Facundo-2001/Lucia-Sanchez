@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '/assets/header/lucia-sanchez-logo.png';
 import Nav from '../nav/Nav.jsx'; // Importamos el componente Nav
 import './Header.css';
+
+// 🌟 CORRECCIÓN: Eliminamos el import de la imagen "logo" que apuntaba a public.
 
 const Header = () => {
   const location = useLocation();
@@ -21,7 +22,8 @@ const Header = () => {
   return (
     <header className="main-header">
       <Link to="/" className="header-logo">
-        <img src={logo} alt="Logo de Lucia Sanchez" className="header-logo-img" />
+        {/* 🌟 CORRECCIÓN: Colocamos la ruta de texto directa omitiendo la palabra 'public' */}
+        <img src="/assets/haeder/lucia-sanchez-logo.webp" alt="Logo de Lucia Sanchez" className="header-logo-img" />
       </Link>
 
       {/* Botón Hamburguesa (solo visible en móviles por CSS) */}

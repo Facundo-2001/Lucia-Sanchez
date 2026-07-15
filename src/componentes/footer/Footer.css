@@ -1,5 +1,5 @@
 .main-footer {
-  background-color: #f9cac3;
+  background-color: #e9cecb;
   width: 100%;
   color: var(--bordeaux);
   padding: 2rem 5%; /* Añadimos padding lateral */
@@ -7,6 +7,8 @@
   margin-top: auto;
   box-sizing: border-box; 
   overflow: hidden;
+
+  font-family: 'Noto+Sans+KR', sans-serif;
 }
 
 .footer-content {

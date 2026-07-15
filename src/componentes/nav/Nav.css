@@ -15,28 +15,15 @@
 }
 
 .nav-item a {
-  font-family: 'Noto+Sans+KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   text-decoration: none;
   font-weight: 450;
   transition: color 0.3s ease;
 }
 
-.nav-item a:hover {  /*???*/
+.nav-item a:hover {
   color: var(--oro, #d4af37);
 }
-
-/* --- Estilos para Móvil (Celulares y Tablets) --- */
-@media (max-width: 768px) {
-  .navbar {
-    width: 100%;
-    justify-content: center;
-  }
-  .nav-list {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 
 .dropdown-item {
   position: relative;
@@ -46,33 +33,40 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-family: "Noto+Sans+KR", sans-serif;
+  gap: 8px;
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: 450;
 }
 
+/* Flecha limpia creada con bordes CSS */
 .arrow {
-  font-size: 0.7rem;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
   transition: transform 0.3s ease;
 }
 
-/* MENU DESPLEGABLE */
+/* SUBMENU EN ESCRITORIO (Flotante) */
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
   background-color: #ffffff;
-  min-width: 150px; /* ANCHO PARA QUE ENTRE EL TEXTO */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  min-width: 220px; /* Un poco más de ancho para evitar saltos de línea molestos */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
   padding: 0.5rem 0;
   list-style: none;
   border: 1px solid #f0f0f0;
   
+  /* 🌟 Aseguramos alineación vertical una debajo de la otra */
   display: flex !important;
   flex-direction: column !important; 
-  gap: 5px !important;
+  gap: 0px; 
   
   opacity: 0;
   visibility: hidden;
@@ -80,44 +74,114 @@
   z-index: 100;
 }
 
+/* Estilo estricto para cada fila del menú de PC */
 .dropdown-menu li {
+  display: block !important;
   width: 100%;
-  display: block;
 }
 
 .dropdown-menu li a {
-  display: block; /* Ocupa el 100% del ancho del 'li' */
+  display: block !important; 
   padding: 0.8rem 1.5rem;
-  font-family: 'Noto+Sans+KR', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 400;
   color: #212529;
   text-decoration: none;
-  text-align: left; /* TEXTO IZQUIERDA, MEJOR LECTURA */
-  white-space: nowrap; /* Evita que el texto se rompa bruscamente */
+  text-align: left; 
+  white-space: nowrap; 
   transition: background-color 0.2s ease, color 0.2s ease;
 
   font-family: 'Noto Sans KR', sans-serif !important;
-  font-size: 1rem !important;
-  font-weight: 450 !important;       /* MISMO GROSOR ITEMS PRINCIPALES*/
-  text-transform: uppercase;         /* FORZAR MAYUS */
+  font-size: 0.95rem !important;
+  font-weight: 450 !important;      
+  text-transform: uppercase;         
 }
 
-/* Efecto hover para las opciones del submenú */
 .dropdown-menu li a:hover {
-  background-color: #f9f9f9; /* Fondo gris sutil */
-  color: var(--oro, #d4af37);  /* Tu color destacado */
+  background-color: #f9f9f9; 
+  color: var(--oro, #d4af37);  
 }
 
-/* EL DISPARADOR: Cuando pasas el mouse por encima de la sección, muestra el menú */
-.dropdown-item:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0); /* Sube suavemente a su lugar */
+/* Comportamiento Hover únicamente en Escritorio */
+@media (min-width: 769px) {
+  .dropdown-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); 
+  }
+
+  .dropdown-item:hover .arrow {
+    transform: translateY(2px) rotate(-135deg); /* Apunta hacia arriba */
+    color: var(--bordeaux, #722f37);
+  }
 }
 
-/* Rota la flechita hacia arriba al abrirse */
-.dropdown-item:hover .arrow {
-  transform: rotate(180deg);
-  color: var(--bordeaux, #722f37);
+/* --- RESPONSIVE MÓVIL (Celulares y Tablets) --- */
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .dropdown-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-trigger {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Rediseño del dropdown en móvil: Deja de flotar y empuja el contenido hacia abajo */
+  .dropdown-menu {
+    position: static !important; 
+    transform: none !important;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    padding: 0;
+    
+    /* Efecto de colapso y despliegue suave */
+    max-height: 0; 
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+    
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Cuando el usuario hace click en móvil, la solapa se expande */
+  .dropdown-item.active .dropdown-menu {
+    max-height: 150px; /* Altura suficiente para mostrar los enlaces */
+    opacity: 1;
+    visibility: visible;
+    margin-top: 10px;
+  }
+
+  .dropdown-menu li a {
+    text-align: center !important;
+    padding: 0.5rem 0 !important;
+  }
+  .dropdown-menu li a:hover,
+  .dropdown-menu li a:active,
+  .dropdown-menu li a:focus {
+    background-color: transparent !important;
+    color: var(--oro, #d4af37); /* Mantiene tu cambio de color de texto */
+  }
+
+  /* ROTACION FLECHA */
+  .dropdown-item.active .arrow {
+    transform: translateY(2px) rotate(-135deg);
+  }
 }
