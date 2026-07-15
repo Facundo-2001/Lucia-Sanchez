@@ -23,7 +23,7 @@ const Footer = () => {
             <Link to="/">-</Link>
           </div>
           <div className="footer-column">
-            <h4 className="footer-heading">PORTAFOLIO</h4>
+            <h4 className="footer-heading">PORTFOLIO</h4>
             <Link to="/videos-y-programas">VIDEOCLIPS & PROGRAMAS</Link>
             <Link to="/eventos">EVENTOS</Link>
           </div>

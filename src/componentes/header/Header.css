@@ -139,7 +139,7 @@
     right: -100%; /* OCULTA MENÚ A LA DERECHA */
     width: 250px;
     height: calc(100vh - 120px); /* OCUPA LO QUE QUEDA DISPONIBLE DE PANTALLA */
-    background-color: rgba(202, 171, 171, 0.514); /* COLOR BACKGROUND MENU HAMBURGUESA */
+    background-color: rgba(202, 171, 171, 0.85); /* COLOR BACKGROUND MENU HAMBURGUESA */
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 120px;

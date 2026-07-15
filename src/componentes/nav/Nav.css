@@ -55,7 +55,7 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  background-color: #ffffff;
+  background-color: #fff1f1;
   min-width: 220px; /* Un poco más de ancho para evitar saltos de línea molestos */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
@@ -102,6 +102,25 @@
 
 /* Comportamiento Hover únicamente en Escritorio */
 @media (min-width: 769px) {
+  .nav-container {
+    position: fixed; 
+    top: 0; 
+    right: -100%; 
+    width: 280px; 
+    height: 100vh; 
+    
+    /* 👇 CAMBIA ESTA LÍNEA DE AQUÍ (sube el valor de 0.94 a 0.98 o a 1.0 para que sea más sólido) */
+    background-color: rgba(255, 255, 255, 0.98); 
+    
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 120px 24px 40px 24px; 
+    box-shadow: -8px 0 25px rgba(0, 0, 0, 0.05); 
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+  }
+
   .dropdown-item:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -173,6 +192,7 @@
     text-align: center !important;
     padding: 0.5rem 0 !important;
   }
+
   .dropdown-menu li a:hover,
   .dropdown-menu li a:active,
   .dropdown-menu li a:focus {
